@@ -40,9 +40,16 @@ function wadoRsMetaDataProvider(type, imageId) {
     };
   }
 
-  if (type === 'patientModule') {
+if (type === 'patientModule') {
+    const patientValue = getValue(metaData['00100010']);
+    let patientName;
+    if (typeof patientValue === 'string') {
+      patientName = patientValue;
+    } else if (typeof patientValue === 'object') {
+      patientName = patientValue.Alphabetic;
+    }
     return {
-      patientName: getValue(metaData['00100010']),
+      patientName,
       patientId: getValue(metaData['00100020']),
       patientSex: getValue(metaData['00100040']),
       patientBirthDate: getValue(metaData['00100030']),
