@@ -20,7 +20,7 @@
     "cm": "npx git-cz",
     "dev": "webpack serve --config ./.webpack/webpack.dev.js",
     "start": "npm run dev",
-    "prepublishOnly": "npm run build && npm run build:release"
+    "prepublishOnly": "npm run build && npm run build:release",
     "prepare": "npm run build && npm run build:release"
   },
   "peerDependencies": {
