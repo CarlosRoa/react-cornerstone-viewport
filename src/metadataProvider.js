@@ -6,6 +6,8 @@ const { getNumberValue, getValue } = cornerstoneWADOImageLoader.wadors.metaData;
 
 function wadoRsMetaDataProvider(type, imageId) {
   
+  metaURL = imageId.split('wadors:')[1]
+  
   let xhr = new XMLHttpRequest();
    xhr.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200) {
@@ -16,7 +18,7 @@ function wadoRsMetaDataProvider(type, imageId) {
         }
     };
 
-    xhr.open("GET", imageId, true);
+    xhr.open("GET", metaURL, true);
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.onloadend = return function() {
       
