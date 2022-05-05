@@ -10,6 +10,7 @@ function wadoRsMetaDataProvider(type, imageId) {
   );
 
   if (!metaData) {
+    console.log("There is no metadata for imageId: ", imageId, "Type: ", type)
     return;
   }
 
