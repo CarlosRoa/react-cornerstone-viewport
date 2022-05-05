@@ -374,6 +374,8 @@ class CornerstoneViewport extends Component {
    if(element === this.element) {
       const { loadingIndicatorComponent: Component } = this.props;
       const { error, imageProgress } = this.state;
+     
+     console.log("error, imageProgress", error, imageProgress)
 
       return <Component error={error} percentComplete={imageProgress} />;
    }
