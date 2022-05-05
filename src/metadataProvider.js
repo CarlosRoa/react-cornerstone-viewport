@@ -20,7 +20,7 @@ function wadoRsMetaDataProvider(type, imageId) {
 
     xhr.open("GET", metaURL, true);
     xhr.setRequestHeader('Accept', 'application/json');
-    xhr.onloadend = return function() {
+    return xhr.onloadend = function() {
       
       const metaData = cornerstoneWADOImageLoader.wadors.metaDataManager.get(
        imageId
