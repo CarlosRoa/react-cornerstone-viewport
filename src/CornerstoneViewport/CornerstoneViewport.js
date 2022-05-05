@@ -369,11 +369,14 @@ class CornerstoneViewport extends Component {
    * @returns Component
    * @memberof CornerstoneViewport
    */
-  getLoadingIndicator() {
-    const { loadingIndicatorComponent: Component } = this.props;
-    const { error, imageProgress } = this.state;
+  getLoadingIndicator(element) {
+    
+   if(element === this.element) {
+      const { loadingIndicatorComponent: Component } = this.props;
+      const { error, imageProgress } = this.state;
 
-    return <Component error={error} percentComplete={imageProgress} />;
+      return <Component error={error} percentComplete={imageProgress} />;
+   }
   }
 
   /**
@@ -792,7 +795,7 @@ class CornerstoneViewport extends Component {
             this.element = input;
           }}
         >
-          {displayLoadingIndicator && this.element && this.getLoadingIndicator()}
+          {displayLoadingIndicator && this.element ? (this.getLoadingIndicator(this.element)) : (<></>)}
           {/* This classname is important in that it tells `cornerstone` to not
            * create a new canvas element when we "enable" the `viewport-element`
            */}
