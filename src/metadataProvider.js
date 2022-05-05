@@ -91,7 +91,6 @@ function wadoRsMetaDataProvider(type, imageId) {
       }
     }
     xhr.send();
-  }
 }
 
 cornerstone.metaData.addProvider(wadoRsMetaDataProvider);
